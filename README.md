@@ -62,6 +62,9 @@ El objetivo principal de **Climate Weather** es facilitar a los usuarios el acce
 ## Conexión con la Base de Datos.
 Este proyecto no requiere un sistema de gestión de bases de datos. En su lugar, se emplean archivos para el almacenamiento y manejo de los datos.
 
+## Diagrama Entidad-Relacion
+Este proyecto no requiere un sistema de gestion de base de datos.
+
 ## Acceso o Credenciales.
 El proyecto no requiere acceso o credenciales específicas, ya que es una aplicación de cliente sin autenticación de usuario.
 
