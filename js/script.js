@@ -13,6 +13,7 @@ document.getElementById('btn-buscar').addEventListener('click', function() {
 });
 
 async function obtenerClima(ciudad) {
+    // Cambié la URL a HTTPS
     const respuesta = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${ciudad}&lang=es`);
     if (respuesta.ok) {
         const datos = await respuesta.json();
@@ -23,6 +24,7 @@ async function obtenerClima(ciudad) {
 }
 
 async function obtenerPronostico(ciudad) {
+    // Cambié la URL a HTTPS
     const respuesta = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${ciudad}&days=5&lang=es`);
     if (respuesta.ok) {
         const datos = await respuesta.json();
