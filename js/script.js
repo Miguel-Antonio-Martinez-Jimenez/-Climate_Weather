@@ -13,7 +13,7 @@ document.getElementById('btn-buscar').addEventListener('click', function() {
 });
 
 async function obtenerClima(ciudad) {
-    const respuesta = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${ciudad}&lang=es`);
+    const respuesta = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${ciudad}&lang=es`);
     if (respuesta.ok) {
         const datos = await respuesta.json();
         actualizarUI(datos);
@@ -23,7 +23,7 @@ async function obtenerClima(ciudad) {
 }
 
 async function obtenerPronostico(ciudad) {
-    const respuesta = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${ciudad}&days=5&lang=es`);
+    const respuesta = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${ciudad}&days=5&lang=es`);
     if (respuesta.ok) {
         const datos = await respuesta.json();
         mostrarPronostico(datos.forecast.forecastday);
@@ -90,14 +90,14 @@ function mostrarPronostico(forecast) {
             </div>
         `;
 
-        pronosticoContainer.innerHTML += dayCard;
+        pronosticoContainer.innerHTML += dayCard; // Agregar cada tarjeta al contenedor
     });
 
-    forecastDiv.appendChild(pronosticoContainer); // Agregar las tarjetas al contenedor principal
+    forecastDiv.appendChild(pronosticoContainer); // Agregar el contenedor de pronóstico a la UI
 }
 
 function mostrarError(mensaje) {
-    document.getElementById('mensaje-error').innerText = mensaje; // Establecer el mensaje de error
-    const modal = new bootstrap.Modal(document.getElementById('modalError')); // Crear la instancia del modal
-    modal.show(); // Mostrar el modal
+    const modal = new bootstrap.Modal(document.getElementById('modalError'));
+    document.getElementById('mensaje-error').innerText = mensaje;
+    modal.show();
 }
